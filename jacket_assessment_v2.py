@@ -126,7 +126,6 @@ def jacket_sorter_auto():
 
 
 def repeat_sorter():
-
     while True:
         mode = input(
             "do you want manual(m) or automatic(a) mode or are you done(d): ")  # input for the mode option either manual mode, automatic mode or exiting and ending the program
@@ -146,4 +145,9 @@ def repeat_sorter():
     print("All the sorted clothes in your session: \n" + str(clothes_list))
 
 
-repeat_sorter()
+def main():
+    repeat_sorter()
+
+
+if __name__ == "__main__":
+    main()
