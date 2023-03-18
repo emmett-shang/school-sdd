@@ -5,22 +5,9 @@ import time  # import the library, time
 clothes_list = []  # placeholder/empty list for later use
 
 
-
-
-
-
-
-
-
-
-
-
-
-
 def jacket_sorter_manual():  # clothes_sorter function
 
     while True:
-
         size = input("input the size of the jacket into the system: ")  # ask for size input for clothes
 
         if size.isdigit():  # checks if the input can be converted to integer
@@ -33,8 +20,7 @@ def jacket_sorter_manual():  # clothes_sorter function
                     grade = "N/A"
                     print("grade: " + grade)
                     print("-------------------------------")
-
-                elif size >= 5 and size <= 10:  # small
+                elif 5 <= size <= 10:  # small
                     print("accepted")
                     category = "small"
                     print("size: " + category)
@@ -48,13 +34,10 @@ def jacket_sorter_manual():  # clothes_sorter function
                         print("grade: " + grade)
 
                     print("-------------------------------")
-
-                elif size > 10 and size <= 20:  # medium
+                elif 10 < size <= 20:  # medium
                     print("accepted")
                     category = "medium"
                     print("size: " + category)
-
-
                 else:  # large
                     print("accepted")
                     category = "large"
@@ -62,7 +45,8 @@ def jacket_sorter_manual():  # clothes_sorter function
 
                     print("-------------------------------")
 
-                clothes_final = (size, category, grade)  # adds all the values including size, category and grade into a variable
+                clothes_final = (
+                    size, category, grade)  # adds all the values including size, category and grade into a variable
                 clothes_list.append(clothes_final)  # adds clothes_final values to the list clothes_list
             else:  # returns a message for invalid input of grade
                 print("This is not a valid grade")
@@ -141,7 +125,7 @@ def jacket_sorter_auto():
         pass  # loop continues to the next step
 
 
-def repeat():
+def repeat_sorter():
 
     while True:
         mode = input(
@@ -162,4 +146,4 @@ def repeat():
     print("All the sorted clothes in your session: \n" + str(clothes_list))
 
 
-repeat()
+repeat_sorter()
