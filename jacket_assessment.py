@@ -7,9 +7,9 @@ clothes_list = []  # list to collect sorted clothes
 
 def size_category(category, grade):
     if category == "rejected":
-        graded = "N/A"
-
-    grade_map = {"j": "junior", "s":"senior"}
+        grade_map = {"j": "N/A", "s": "N/A"}
+    else:
+        grade_map = {"j": "junior", "s":"senior"}
 
     return category, grade_map[grade]
 
@@ -107,12 +107,12 @@ def repeat_sorter():
     while True:
         mode = input(
             "do you want manual(m) or automatic(a) mode or are you done(d): ")  # input for the mode option either manual mode, automatic mode or exiting and ending the program
-        match mode:
-            case _ if mode.lower() == "m":
+        match mode.lower():
+            case "m":
                 jacket_sorter_manual()  # runs manual mode
-            case _ if mode.lower() == "a":
+            case "a":
                 jacket_sorter_auto()  # runs auto mode
-            case _ if mode.lower() == "d":
+            case "d":
                 print("clothes sorter shutting down...")
                 print("-------------------------------")
                 break
