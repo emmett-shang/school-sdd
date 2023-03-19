@@ -10,9 +10,8 @@ def size_category(category, grade):
         graded = "N/A"
 
     grade_map = {"j": "junior", "s":"senior"}
-    graded = grade_map[grade]
 
-    return category, graded
+    return category, grade_map[grade]
 
 
 def jacket_sorter_manual():  # clothes_sorter function
