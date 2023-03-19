@@ -14,11 +14,6 @@ def size_category(category, grade):
     graded = grade
     grade_map[grade]
 
-    #if grade.lower() == "j":  # junior
-    #    graded = "junior"
-    #elif grade.lower() == "s":  # senior
-    #    graded = "senior"
-
     return category, graded
 
 
