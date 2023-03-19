@@ -5,7 +5,7 @@ import time
 clothes_list = []  # list to collect sorted clothes
 
 
-def size_category(category, grade):
+def grade_category(category, grade):
     if category == "rejected":
         grade_map = {"j": "N/A", "s": "N/A"}
     else:
@@ -32,8 +32,8 @@ def jacket_sorter_manual():  # clothes_sorter function
                     case _ if size > 20:
                         category = "large"
 
-                print(f"size and grade: {str(size_category(category, grade))} \n {'-' * 50}")
-                clothes_final = (size, *size_category(category, grade))
+                print(f"category and grade: {str(grade_category(category, grade))} \n {'-' * 50}")
+                clothes_final = (size, *grade_category(category, grade))
                 clothes_list.append(clothes_final)
 
             else:  # returns a message for invalid input of grade
