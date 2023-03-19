@@ -6,14 +6,11 @@ clothes_list = []  # placeholder/empty list for later use
 
 
 def clothes_sorter_manual():  # clothes_sorter function
-
     while True:
-
         size = input("input the size of the clothes into the system: ")  # ask for size input for clothes
         if size.isdigit():  # checks if the input can be converted to integer
             size = int(size)  # converts size into integer
             match size:
-
                 case _ if size < 5:  # rejected
                     category = "rejected"
                 case _ if 5 <= size <= 10:  # small
@@ -25,9 +22,7 @@ def clothes_sorter_manual():  # clothes_sorter function
             clothes_final = (size, category)  # adds all the values including size, category and grade into a variable
             clothes_list.append(clothes_final)  # adds clothes_final values to the list clothes_list
             print(f"category: {category} \n {'-' * 50}")
-
         else:  # returns a message for invalid input of size
-
             print("This is not a valid size")
             continue  # skips to the next iteration of the loop
 
@@ -80,15 +75,12 @@ def repeat_sorter():
             case "a":
                 clothes_sorter_auto()
             case "d":  # if mode input = "d" or "D"
-                print("clothes sorter shutting down...")
-                print("-------------------------------")
+                print(f"clothes sorter shutting down... \n {'-' * 50}")
                 break
             case _:  # else if the mode input is none of the above return an error message
-                print("Input is invalid. Please input a valid option")
-                print("-------------------------------")
+                print(f"Input is invalid. Please input a valid option \n {'-' * 50}")
 
-    return print("All the sorted clothes in your session: \n" + str(clothes_list))
-
+    return print(f"All the sorted clothes in your session: \n {str(clothes_list)}")
 
 
 def main():
