@@ -2,9 +2,6 @@ import random  # import the libary, random
 
 import time  # import the library, time
 
-
-
-
 clothes_list = []  # placeholder/empty list for later use
 
 
@@ -86,14 +83,16 @@ def jacket_sorter_manual():  # clothes_sorter function
                     case _ if 10 < size <= 20:
                         print("size and grade: " + str(medium(grade)))
                         clothes_final = (
-                            size, *medium(grade))  # adds all the values including size, category and grade into a variable
+                            size,
+                            *medium(grade))  # adds all the values including size, category and grade into a variable
                         clothes_list.append(clothes_final)
                         print("-------------------------------")
 
                     case _ if size > 20:
                         print("size and grade: " + str(large(grade)))
                         clothes_final = (
-                            size, *large(grade))  # adds all the values including size, category and grade into a variable
+                            size,
+                            *large(grade))  # adds all the values including size, category and grade into a variable
                         clothes_list.append(clothes_final)
                         print("-------------------------------")
 
@@ -121,8 +120,9 @@ def rejected_auto():
     grade = "N/A"
 
     return category, grade
-def small_auto():
 
+
+def small_auto():
     category = "small"
 
     if random.random() <= 0.75:  # returns a random value between 0 and 1. If the value is below 0.75 grade = Junior making it a 75% chance
@@ -132,6 +132,7 @@ def small_auto():
         grade = "senior"
 
     return category, grade
+
 
 def medium_auto():
     category = "medium"
@@ -143,8 +144,8 @@ def medium_auto():
 
     return category, grade
 
-def large_auto():
 
+def large_auto():
     category = "large"
 
     if random.random() <= 0.25:  # if the value is below 0.25, grade = junior (25% chance)
@@ -154,6 +155,7 @@ def large_auto():
         grade = "senior"
 
     return category, grade
+
 
 def jacket_sorter_auto():
     grade = ""
@@ -169,7 +171,8 @@ def jacket_sorter_auto():
                     print(f"Weight of clothes: {size_auto}")
                     print("size and grade: " + str(rejected_auto()))
                     print("-------------------------------")
-                    clothes_final = (size_auto, *rejected_auto())  # assigns or the values including size of clothes, category and grade to a variable
+                    clothes_final = (size_auto,
+                                     *rejected_auto())  # assigns or the values including size of clothes, category and grade to a variable
                     clothes_list.append(clothes_final)
 
                     time.sleep(1)  # delay for 1 second
@@ -177,25 +180,28 @@ def jacket_sorter_auto():
                     print(f"Weight of clothes: {size_auto}")
                     print("size and grade: " + str(small_auto()))
                     print("-------------------------------")
-                    clothes_final = (size_auto, *small_auto())  # assigns or the values including size of clothes, category and grade to a variable
+                    clothes_final = (size_auto,
+                                     *small_auto())  # assigns or the values including size of clothes, category and grade to a variable
                     clothes_list.append(clothes_final)
                     time.sleep(1)
                 case _ if 10 < size_auto <= 20:  # medium
                     print(f"Weight of clothes: {size_auto}")
                     print("size and grade: " + str(medium_auto()))
                     print("-------------------------------")
-                    clothes_final = (size_auto, *medium_auto())  # assigns or the values including size of clothes, category and grade to a variable
+                    clothes_final = (size_auto,
+                                     *medium_auto())  # assigns or the values including size of clothes, category and grade to a variable
                     clothes_list.append(clothes_final)
                     time.sleep(1)
                 case _ if size_auto < 20:  # large
                     print(f"Weight of clothes: {size_auto}")
                     print("size and grade: " + str(large_auto()))
-                    clothes_final = (size_auto, *large_auto())  # assigns or the values including size of clothes, category and grade to a variable
+                    clothes_final = (size_auto,
+                                     *large_auto())  # assigns or the values including size of clothes, category and grade to a variable
                     clothes_list.append(clothes_final)
                     print("-------------------------------")
                     time.sleep(1)
 
-              # adds clothes_final values to the list clothes_list
+            # adds clothes_final values to the list clothes_list
     else:  # if num cannot be converted to an integer return error message
         print("Invalid input")
         pass  # loop continues to the next step
