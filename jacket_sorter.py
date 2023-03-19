@@ -9,7 +9,7 @@ def grade_category(category, grade):
     if category == "rejected":
         grade_map = {"j": "N/A", "s": "N/A"}
     else:
-        grade_map = {"j": "junior", "s":"senior"}
+        grade_map = {"j": "junior", "s": "senior"}
 
     return category, grade_map[grade]
 
@@ -35,7 +35,6 @@ def jacket_sorter_manual():  # clothes_sorter function
                 print(f"category and grade: {str(grade_category(category, grade))} \n {'-' * 50}")
                 clothes_final = (size, *grade_category(category, grade))
                 clothes_list.append(clothes_final)
-
             else:  # returns a message for invalid input of grade
                 print("This is not a valid grade")
                 continue  # skips to the next iteration of the loop
@@ -82,7 +81,6 @@ def jacket_sorter_auto():
     if num.isdigit():  # checks if "num" can be converted to an integer
         for i in range(int(num)):  # loop "num" amount of times
             size_auto = random.randint(0, 30)  # generate a random clothes size between 0 and 30
-
             match size_auto:
                 case _ if size_auto < 5:
                     category = "rejected"
@@ -97,7 +95,6 @@ def jacket_sorter_auto():
             time.sleep(1)  # delay for 1 second
             clothes_final = (size_auto, *size_category_auto(category))
             clothes_list.append(clothes_final)
-
     else:  # if num cannot be converted to an integer return error message
         print("Invalid input")
         pass  # loop continues to the next step
@@ -113,12 +110,10 @@ def repeat_sorter():
             case "a":
                 jacket_sorter_auto()  # runs auto mode
             case "d":
-                print("clothes sorter shutting down...")
-                print("-------------------------------")
+                print(f"clothes sorter shutting down... \n {'-' * 50}")
                 break
             case _:  # else if the mode input is none of the above return an error message
-                print("Input is invalid. Please input a valid option")
-                print("-------------------------------")
+                print(f"Input is invalid. Please input a valid option \n {'-' * 50}")
 
     if len(clothes_list) == 0:
         print("Why did you even turn on the sorter?")
