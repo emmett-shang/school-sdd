@@ -28,17 +28,14 @@ def jacket_sorter_manual():  # clothes_sorter function
                 match size:
                     case _ if size < 5:
                         category = "rejected"
-                        print("size and grade: " + str(size_category(category, grade)))  # rejected
                     case _ if 5 <= size <= 10:
                         category = "small"
-                        print("size and grade: " + str(size_category(category, grade)))
                     case _ if 10 < size <= 20:
                         category = "medium"
-                        print("size and grade: " + str(size_category(category, grade)))
                     case _ if size > 20:
                         category = "large"
-                        print("size and grade: " + str(size_category(category, grade)))
 
+                print("size and grade: " + str(size_category(category, grade)))
                 clothes_final = (size, *size_category(category,
                                                       grade))  # adds all the values including size, category and grade into a variable
                 clothes_list.append(clothes_final)
@@ -93,24 +90,16 @@ def jacket_sorter_auto():
             match size_auto:
                 case _ if size_auto < 5:
                     category = "rejected"
-                    print(f"Weight of clothes: {size_auto}")
-                    print("size and grade: " + str(size_category_auto(category)))
-                    time.sleep(1)  # delay for 1 second
                 case _ if 5 <= size_auto <= 10:
                     category = "small"
-                    print(f"Weight of clothes: {size_auto}")
-                    print("size and grade: " + str(size_category_auto(category)))
-                    time.sleep(1)
                 case _ if 10 < size_auto <= 20:  # medium
                     category = "medium"
-                    print(f"Weight of clothes: {size_auto}")
-                    print("size and grade: " + str(size_category_auto(category)))
-                    time.sleep(1)
                 case _ if size_auto > 20:  # large
                     category = "large"
-                    print(f"Weight of clothes: {size_auto}")
-                    print("size and grade: " + str(size_category_auto(category)))
-                    time.sleep(1)
+
+            print(f"Weight of clothes: {size_auto}")
+            print("size and grade: " + str(size_category_auto(category)))
+            time.sleep(1)  # delay for 1 second
             clothes_final = (size_auto, *size_category_auto(
                 category))  # assigns or the values including size of clothes, category and grade to a variable
             clothes_list.append(clothes_final)
