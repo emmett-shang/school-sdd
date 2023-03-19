@@ -1,5 +1,8 @@
 # School Project
 
+## Requirements
+- Python 3.10.x
+
 ## First implementation
 
 - Point 1
