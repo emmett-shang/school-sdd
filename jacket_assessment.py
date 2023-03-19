@@ -6,7 +6,6 @@ clothes_list = []  # list to collect sorted clothes
 
 
 def size_category(category, grade):
-    graded = ""
     if category == "rejected":
         graded = "N/A"
 
