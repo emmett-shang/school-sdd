@@ -7,7 +7,8 @@ clothes_list = []  # list to collect sorted clothes
 
 def size_category(category, grade):
     if category == "rejected":
-        grade_map = {"j": "N/A", "s": "N/A"}
+        graded = "N/A"
+        return graded
     else:
         grade_map = {"j": "junior", "s":"senior"}
 
