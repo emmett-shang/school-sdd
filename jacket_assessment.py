@@ -1,8 +1,8 @@
-import random  # import the libary, random
+import random
 
-import time  # import the library, time
+import time
 
-clothes_list = []  # placeholder/empty list for later use
+clothes_list = []  # list to collect sorted clothes
 
 
 def rejected():
@@ -14,13 +14,9 @@ def rejected():
 
 def small(grade):
     graded = ""
-
     category = "small"
-
     if grade.lower() == "j":  # junior
-
         graded = "junior"
-
     elif grade.lower() == "s":  # senior
         graded = "senior"
 
@@ -29,12 +25,9 @@ def small(grade):
 
 def medium(grade):
     graded = ""
-
     category = "medium"
     if grade.lower() == "j":  # junior
-
         graded = "junior"
-
     elif grade.lower() == "s":  # senior
         graded = "senior"
 
@@ -43,14 +36,12 @@ def medium(grade):
 
 def large(grade):
     graded = ""
-
     category = "large"
     if grade.lower() == "j":  # junior
-
         graded = "junior"
-
     elif grade.lower() == "s":  # senior
         graded = "senior"
+
     return category, graded
 
 
@@ -66,17 +57,13 @@ def jacket_sorter_manual():  # clothes_sorter function
                 match size:
                     case _ if size < 5:
                         print("size and grade: " + str(rejected()))  # rejected
-                        clothes_final = (
-                            size, *rejected()
-                        )  # adds all the values including size, category and grade into a variable
+                        clothes_final = (size, *rejected())  # adds all the values including size, category and grade into a variable
                         clothes_list.append(clothes_final)
                         print("-------------------------------")
 
                     case _ if 5 <= size <= 10:
                         print("size and grade: " + str(small(grade)))
-                        clothes_final = (
-                            size, *small(grade)
-                        )  # adds all the values including size, category and grade into a variable
+                        clothes_final = (size, *small(grade))  # adds all the values including size, category and grade into a variable
                         clothes_list.append(clothes_final)
                         print("-------------------------------")
 
