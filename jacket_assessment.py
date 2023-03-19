@@ -22,7 +22,7 @@ def jacket_sorter_manual():  # clothes_sorter function
     while True:
         size = input("input the size of the jacket into the system: ")  # ask for size input for clothes
         if size.isdigit():  # checks if the input can be converted to integer
-            size = int(size)  # converts size into integer
+            size = int(size)
             grade = input("Junior(j) or Senior(s)? ")  # ask for the grade of clothes, whether its junior or senior
             if grade.lower() == "j" or grade.lower() == "s":  # checks for valid input
                 match size:
@@ -36,8 +36,7 @@ def jacket_sorter_manual():  # clothes_sorter function
                         category = "large"
 
                 print("size and grade: " + str(size_category(category, grade)))
-                clothes_final = (size, *size_category(category,
-                                                      grade))  # adds all the values including size, category and grade into a variable
+                clothes_final = (size, *size_category(category, grade))
                 clothes_list.append(clothes_final)
                 print("-------------------------------")
             else:  # returns a message for invalid input of grade
@@ -45,12 +44,12 @@ def jacket_sorter_manual():  # clothes_sorter function
                 continue  # skips to the next iteration of the loop
         else:  # returns a message for invalid input of size
             print("This is not a valid size")
-            continue  # skips to the next iteration of the loop
+            continue
 
         proceed = input("do you want to continue y/n: ")  # asks if the user wants to continue manual input
-        if proceed.lower() == "y":  # if input is "y" or "Y"
+        if proceed.lower() == "y":
             pass  # continue to the next step of the loop
-        elif proceed.lower() == "n":  # if input is "n" or "N"
+        elif proceed.lower() == "n":
             break  # stop the current loop
         else:  # else if the input is invalid, automatically stop the loop
             print("Invalid input. Auto stopping manual input...")
@@ -100,8 +99,7 @@ def jacket_sorter_auto():
             print(f"Weight of clothes: {size_auto}")
             print("size and grade: " + str(size_category_auto(category)))
             time.sleep(1)  # delay for 1 second
-            clothes_final = (size_auto, *size_category_auto(
-                category))  # assigns or the values including size of clothes, category and grade to a variable
+            clothes_final = (size_auto, *size_category_auto(category))
             clothes_list.append(clothes_final)
             print("-------------------------------")
     else:  # if num cannot be converted to an integer return error message
@@ -114,11 +112,11 @@ def repeat_sorter():
         mode = input(
             "do you want manual(m) or automatic(a) mode or are you done(d): ")  # input for the mode option either manual mode, automatic mode or exiting and ending the program
         match mode:
-            case _ if mode.lower() == "m":  # checks if the mode is manual (keyword it is looking for is m). .lower() makes it so that it is not case sensitive
-                jacket_sorter_manual()
-            case _ if mode.lower() == "a":  # else if the mode input is "a" or "A"
-                jacket_sorter_auto()
-            case _ if mode.lower() == "d":  # if mode input = "d" or "D"
+            case _ if mode.lower() == "m":
+                jacket_sorter_manual()  # runs manual mode
+            case _ if mode.lower() == "a":
+                jacket_sorter_auto()  # runs auto mode
+            case _ if mode.lower() == "d":
                 print("clothes sorter shutting down...")
                 print("-------------------------------")
                 break
