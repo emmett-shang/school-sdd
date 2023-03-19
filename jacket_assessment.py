@@ -9,10 +9,15 @@ def size_category(category, grade):
     graded = ""
     if category == "rejected":
         graded = "N/A"
-    elif grade.lower() == "j":  # junior
-        graded = "junior"
-    elif grade.lower() == "s":  # senior
-        graded = "senior"
+
+    grade_map = {"j": "junior", "s":"senior"}
+    graded = grade
+    grade_map[grade]
+
+    #if grade.lower() == "j":  # junior
+    #    graded = "junior"
+    #elif grade.lower() == "s":  # senior
+    #    graded = "senior"
 
     return category, graded
 
