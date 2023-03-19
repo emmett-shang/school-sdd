@@ -29,32 +29,20 @@ def jacket_sorter_manual():  # clothes_sorter function
                     case _ if size < 5:
                         category = "rejected"
                         print("size and grade: " + str(size_category(category, grade)))  # rejected
-                        clothes_final = (
-                        size, *rejected())  # adds all the values including size, category and grade into a variable
-                        clothes_list.append(clothes_final)
-                        print("-------------------------------")
                     case _ if 5 <= size <= 10:
                         category = "small"
                         print("size and grade: " + str(size_category(category, grade)))
-                        clothes_final = (size, *size_category(category,
-                                                              grade))  # adds all the values including size, category and grade into a variable
-                        clothes_list.append(clothes_final)
-                        print("-------------------------------")
                     case _ if 10 < size <= 20:
                         category = "medium"
                         print("size and grade: " + str(size_category(category, grade)))
-                        clothes_final = (
-                            size,
-                            *size_category(category,
-                                           grade))  # adds all the values including size, category and grade into a variable
-                        clothes_list.append(clothes_final)
-                        print("-------------------------------")
                     case _ if size > 20:
+                        category = "large"
                         print("size and grade: " + str(size_category(category, grade)))
-                        clothes_final = (size, *size_category(category,
-                                                              grade))  # adds all the values including size, category and grade into a variable
-                        clothes_list.append(clothes_final)
-                        print("-------------------------------")
+
+                clothes_final = (size, *size_category(category,
+                                                      grade))  # adds all the values including size, category and grade into a variable
+                clothes_list.append(clothes_final)
+                print("-------------------------------")
             else:  # returns a message for invalid input of grade
                 print("This is not a valid grade")
                 continue  # skips to the next iteration of the loop
@@ -101,43 +89,32 @@ def jacket_sorter_auto():
     if num.isdigit():  # checks if "num" can be converted to an integer
         for i in range(int(num)):  # loop "num" amount of times
             size_auto = random.randint(0, 30)  # generate a random clothes size between 0 and 30
+
             match size_auto:
                 case _ if size_auto < 5:
                     category = "rejected"
                     print(f"Weight of clothes: {size_auto}")
                     print("size and grade: " + str(size_category_auto(category)))
-                    print("-------------------------------")
-                    clothes_final = (size_auto, *size_category_auto(
-                        category))  # assigns or the values including size of clothes, category and grade to a variable
-                    clothes_list.append(clothes_final)
                     time.sleep(1)  # delay for 1 second
                 case _ if 5 <= size_auto <= 10:
                     category = "small"
                     print(f"Weight of clothes: {size_auto}")
                     print("size and grade: " + str(size_category_auto(category)))
-                    print("-------------------------------")
-                    clothes_final = (size_auto, *size_category_auto(
-                        category))  # assigns or the values including size of clothes, category and grade to a variable
-                    clothes_list.append(clothes_final)
                     time.sleep(1)
                 case _ if 10 < size_auto <= 20:  # medium
                     category = "medium"
                     print(f"Weight of clothes: {size_auto}")
                     print("size and grade: " + str(size_category_auto(category)))
-                    print("-------------------------------")
-                    clothes_final = (size_auto, *size_category_auto(
-                        category))  # assigns or the values including size of clothes, category and grade to a variable
-                    clothes_list.append(clothes_final)
                     time.sleep(1)
-                case _ if size_auto < 20:  # large
+                case _ if size_auto > 20:  # large
                     category = "large"
                     print(f"Weight of clothes: {size_auto}")
                     print("size and grade: " + str(size_category_auto(category)))
-                    clothes_final = (size_auto, *size_category(
-                        category))  # assigns or the values including size of clothes, category and grade to a variable
-                    clothes_list.append(clothes_final)
-                    print("-------------------------------")
                     time.sleep(1)
+            clothes_final = (size_auto, *size_category_auto(
+                category))  # assigns or the values including size of clothes, category and grade to a variable
+            clothes_list.append(clothes_final)
+            print("-------------------------------")
     else:  # if num cannot be converted to an integer return error message
         print("Invalid input")
         pass  # loop continues to the next step
