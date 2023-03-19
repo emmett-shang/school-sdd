@@ -19,7 +19,7 @@ def clothes_sorter_manual():  # clothes_sorter function
                     category = "medium"
                 case _:  # large
                     category = "large"
-            clothes_final = (size, category)  # adds all the values including size, category and grade into a variable
+            clothes_final = (str(size) + " inches", category)  # adds all the values including size, category and grade into a variable
             clothes_list.append(clothes_final)  # adds clothes_final values to the list clothes_list
             print(f"category: {category} \n {'-' * 50}")
         else:  # returns a message for invalid input of size
@@ -42,7 +42,7 @@ def clothes_sorter_auto():
     if num.isdigit():  # checks if "num" can be converted to an integer
         for i in range(int(num)):  # loop "num" amount of times
             size_auto = random.randint(0, 30)  # generate a random clothes size between 0 and 30
-            print(f"Weight of clothes: {size_auto}")
+            print(f"Weight of clothes: {size_auto} inches")
             match size_auto:
                 case _ if size_auto < 5:  # rejected
                     category = "rejected"
@@ -54,7 +54,7 @@ def clothes_sorter_auto():
                     category = "large"
 
             print(f"category: {category} \n {'-' * 50}")
-            clothes_final = (size_auto, category)  # assigns or the values including size of clothes, category and grade to a variable
+            clothes_final = (str(size_auto) + " inches", category)  # assigns or the values including size of clothes, category and grade to a variable
             clothes_list.append(clothes_final)  # adds clothes_final values to the list clothes_list
             time.sleep(1)  # delay for 1 second
     else:  # if num cannot be converted to an integer return error message
