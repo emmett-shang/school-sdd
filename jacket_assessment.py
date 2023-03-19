@@ -11,8 +11,7 @@ def size_category(category, grade):
         graded = "N/A"
 
     grade_map = {"j": "junior", "s":"senior"}
-    graded = grade
-    grade_map[grade]
+    graded = grade_map[grade]
 
     return category, graded
 
