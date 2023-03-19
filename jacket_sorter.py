@@ -33,7 +33,7 @@ def jacket_sorter_manual():  # clothes_sorter function
                         category = "large"
 
                 print(f"category and grade: {str(grade_category(category, grade))} \n {'-' * 50}")
-                clothes_final = (size, *grade_category(category, grade))
+                clothes_final = (str(size) + " inches", *grade_category(category, grade))
                 clothes_list.append(clothes_final)
             else:  # returns a message for invalid input of grade
                 print("This is not a valid grade")
@@ -91,9 +91,9 @@ def jacket_sorter_auto():
                 case _ if size_auto > 20:  # large
                     category = "large"
 
-            print(f"Weight of clothes: {size_auto} \n size and grade: {str(size_category_auto(category))} \n {'-' * 50}")
+            print(f"Weight of clothes: {size_auto} inches \n size and grade: {str(size_category_auto(category))} \n {'-' * 50}")
             time.sleep(1)  # delay for 1 second
-            clothes_final = (size_auto, *size_category_auto(category))
+            clothes_final = (str(size_auto) + " inches", *size_category_auto(category))
             clothes_list.append(clothes_final)
     else:  # if num cannot be converted to an integer return error message
         print("Invalid input")
